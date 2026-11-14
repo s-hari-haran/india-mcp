@@ -1,9 +1,0 @@
-name = "india-mcp"
-main = "src/worker.js"
-compatibility_date = "2025-06-01"
-workers_dev = true
-
-[vars]
-API_BASE = "https://tenderdesk-020.pages.dev/api/open-tenders"
-
-# Secret (set by deploy.mjs from ~/.secrets/india-mcp.txt): MCP_FEED_KEY

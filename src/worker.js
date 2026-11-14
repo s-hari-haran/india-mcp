@@ -1,4 +1,4 @@
-// Hosted india-mcp connector (Cloudflare Worker). Streamable HTTP MCP endpoint at /mcp (stateless, JSON responses),
+// Hosted india-mcp connector (Cloudflare Pages, pages/_worker.js). Streamable HTTP MCP endpoint at /mcp (stateless, JSON responses),
 // plus a landing page (/) and privacy notice (/privacy).
 import { handleBody, NAME, VERSION } from './server.js';
 import { makeApi, DEFAULT_API, WEBSITE, BULK } from './tools.js';
