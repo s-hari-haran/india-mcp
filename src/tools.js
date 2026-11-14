@@ -126,7 +126,7 @@ export function makeApi({ base = DEFAULT_API, headers = {}, fetchImpl = fetch } 
     const qs = new URLSearchParams(Object.entries(params).filter(([, v]) => v != null && v !== '').map(([k, v]) => [k, String(v)]));
     const r = await fetchImpl(`${base}?${qs}`, { headers: { accept: 'application/json', 'user-agent': 'india-mcp', ...headers } });
     let j;
-    try { j = await r.json(); } catch { throw new Error(`Tender service returned ${r.status}`); }
+    try { j = await r.json(); } catch { throw new Error('the tender service is unavailable right now; please try again in a few minutes'); }
     if (!r.ok) throw Object.assign(new Error(j.error || `Tender service returned ${r.status}`), { status: r.status });
     return j;
   };
