@@ -6,6 +6,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 
 const secretsDir = path.join(os.homedir(), '.secrets');
 const readKV = (f) => Object.fromEntries(fs.readFileSync(f, 'utf8').split(/\r?\n/).map((l) => l.match(/^\s*(\w+)\s*[=:]\s*(\S+)\s*$/)).filter(Boolean).map((m) => [m[1].toUpperCase(), m[2]]));
@@ -13,7 +14,7 @@ const cf = readKV(path.join(secretsDir, 'cloudflare.txt'));
 const wrangler = path.join(os.homedir(), 'tender-platform', 'node_modules', '.bin', process.platform === 'win32' ? 'wrangler.cmd' : 'wrangler');
 const env = { ...process.env, CLOUDFLARE_API_TOKEN: cf.TOKEN, CLOUDFLARE_ACCOUNT_ID: cf.ACCOUNT, WRANGLER_SEND_METRICS: 'false' };
 
-const out = execFileSync(`"${wrangler}" deploy`, { cwd: path.dirname(new URL(import.meta.url).pathname.replace(/^\/(\w:)/, '$1')), shell: true, env, encoding: 'utf8' });
+const out = execFileSync(`"${wrangler}" deploy`, { cwd: path.dirname(fileURLToPath(import.meta.url)), shell: true, env, encoding: 'utf8' });
 console.log(out.split('\n').filter((l) => /https:\/\/|Uploaded|Deployed|Current Version/i.test(l)).join('\n'));
 
 if (process.argv.includes('--secrets')) {
