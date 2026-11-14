@@ -1,0 +1,21 @@
+{
+  "name": "india-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for Indian government tenders: search ~50,000 open tenders (CPPP, GeM, defence, 27+ states, PSUs) from Claude, ChatGPT, Cursor and other AI apps.",
+  "type": "module",
+  "bin": { "india-mcp": "bin/india-mcp.js" },
+  "main": "src/server.js",
+  "files": ["bin", "src/server.js", "src/tools.js", "README.md", "LICENSE"],
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "test": "node test/test.mjs",
+    "deploy": "node deploy.mjs"
+  },
+  "keywords": ["mcp", "model-context-protocol", "india", "tenders", "government", "procurement", "gem", "cppp", "claude", "chatgpt", "eprocurement"],
+  "repository": { "type": "git", "url": "git+https://github.com/s-hari-haran/india-mcp.git" },
+  "homepage": "https://github.com/s-hari-haran/india-mcp#readme",
+  "bugs": "https://github.com/s-hari-haran/india-mcp/issues",
+  "author": "Hari Haran",
+  "license": "MIT",
+  "mcpName": "io.github.s-hari-haran/india-mcp"
+}
