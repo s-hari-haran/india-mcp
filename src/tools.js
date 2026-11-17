@@ -3,7 +3,7 @@
 
 export const DEFAULT_API = 'https://tenderdesk-020.pages.dev/api/open-tenders';
 export const WEBSITE = 'https://tenderdesk-020.pages.dev';
-export const BULK = 'https://apify.com/tenderdata-india/gepnic-tenders';
+export const BULK = 'https://apify.com/ironlabs/gepnic-tenders';
 
 export const SECTORS = [
   'agriculture-food', 'chemicals-industrial-supplies', 'computers-cctv', 'consultancy', 'defence-security-equipment',

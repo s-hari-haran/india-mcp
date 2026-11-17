@@ -80,7 +80,7 @@ npx india-mcp coverage
 
 - Up to 25 tenders per call, first 100 matches per search, 100 searches an hour per person.
 - Each tender links to [TenderDesk](https://tenderdesk-020.pages.dev) for AI briefs, morning alerts and bid tracking.
-- Need thousands of rows, scheduled exports or a data pipeline? Use the [India Government Tenders Scraper on Apify](https://apify.com/tenderdata-india/gepnic-tenders).
+- Need thousands of rows, scheduled exports or a data pipeline? Use the [India Government Tenders Scraper on Apify](https://apify.com/ironlabs/gepnic-tenders).
 
 ## How it works
 
